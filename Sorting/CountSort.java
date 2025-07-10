@@ -18,7 +18,7 @@ public class CountSort {
 
         for (int i = 0; i < n; i++) {
             count[arr[i]]++;
-        }
+        }5
 
         for (int i = 1; i <= max; i++) {
             count[i] = count[i - 1] + count[i];
@@ -27,6 +27,7 @@ public class CountSort {
 
         int[] output = new int[n];
         for (int i = n - 1; i >= 0; i--) {
+            int index = count[arr[i]];
             output[count[arr[i]] - 1] = arr[i];
             count[arr[i]]--;
         }
@@ -46,3 +47,6 @@ public class CountSort {
     }
 
 }
+
+
+// counting sort became unstable when it is done in in-place;
